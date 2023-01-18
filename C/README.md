@@ -1,1 +1,1 @@
-This folder is for practicing all and any code /programme related to the C programming language
+This folder is for practicing codes/programs in the C programming language.
