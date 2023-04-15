@@ -14,11 +14,11 @@ class Customer:
 
     @property
     def customer_mail(self):
-         return f'{self.first}.{self.last}@email.com'
+         return f'{self.first_name}.{self.last_name}@email.com'
 
     @property
     def customer_fullname(self):
-        return f'{self.first} {self.last}'
+        return f'{self.first_name} {self.last_name}'
 
     def apply_discount(self):
         self.purchase = int(self.purchase * self.discount)
