@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''This module creates a class and tries to implement unittest'''
+'''This module creates a class to implement unittest'''
 
 
 class Customer:
