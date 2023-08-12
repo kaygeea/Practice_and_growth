@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+#  This script will install git on a new Ubuntu machine. It will then clone
+#+ a chosen repository to the machine before finally configuring the machine
+#+ accordingly.
+# shellcheck disable=SC2181
+
+# Check if git is already installed on machine
+# git_version=$(git --version)
+if git --version;
+then
+	echo "You already have $(git --version) installed on your machine"
+	read -r -p "Would you like to clone an existing repository? (yes|no): "
+	case "$REPLY" in
+		yes | y | YES | Y | Yes)
+			read -s -r -p "Please enter a valid Personal Access Token(PAT). [Press enter if no PAT] : " pat
+			read -r -p "\nPlease enter Github username: " username
+			read -r -p "Please enter name of Github repository to clone: " repo
+			if ( "$pat" )
+			then
+				git clone https://"$pat"@github.com/"$username"/"$repo"
+			else
+				git clone https://github.com/"$username"/"$repo"
+			fi
+			;;
+		no | n | NO | N | No | nO)
+			echo -ne "All you need is here. Happy coding!!!\n"
+			;;
+		*) echo -ne "You have entered an invalid option. Please try again.\n"
+			;;
+	esac
+elif ! git --version;
+then
+	# Update package index, install Git from the default Ubuntu repository & configure
+	sudo apt update
+	sudo apt install git
+	read -s -r -p "Please enter a valid Personal Access Token(PAT). Press enter if no PAT: " pat
+        read -r -p "\nPlease enter Github username: " username
+        read -r -p "Please enter name of Github repository to clone: " repo
+        if ( "$pat" )
+        then
+		git clone https://"$pat"@github.com/"$username"/"$repo"
+        else
+		git clone https://github.com/"$username"/"$repo"
+        fi
+	# Configure new the machine
+	read -r -p "Please enter your Github email address: " email
+	read -r -p "Please enter your Github name: " name
+	git config --global user.email "$email"
+	git config --global user.name "$name"
+	echo "You now have a configured $(git --version) on your machine. "
+fi
+exit 0
+
