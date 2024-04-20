@@ -1,0 +1,19 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+coverage/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pycachefile
+*.pyo
+*.pyd
+*.pycachefile
+*.egg-info/
+dist/
+build/
+venv/
