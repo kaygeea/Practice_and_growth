@@ -1,4 +1,5 @@
-# Let us say your expense for every month are listed below:
+# Exercise 1
+### Let us say your expense for every month are listed below:
 - January - 2200
 - February - 2350
 - March - 2600
