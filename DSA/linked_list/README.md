@@ -1,18 +1,18 @@
 # Exercise 1
 ### Add the folling methods to the `LinkedList` class implementation:
-- ```python
+```python
 def insert_after_value(self, data_after, data_to_insert):
     # Search for first occurance of data_after value in linked list
     # Now insert data_to_insert after data_after node
 ```
-- ```python
+```python
 def remove_by_value(self, data):
     # Remove first node that contains data
 ```
 
 # Exercise 2
 ### Implement a doubly linked list, with the following node strcuture and methods:
-- ```python
+```python
 class Node:
     def __init__(self, data=None, next=None, prev=None):
         self.data = data
@@ -20,12 +20,12 @@ class Node:
         self.prev = prev
 ```
 
-- ```python
+```python
 def print_forward(self):
     # This method prints list in forward direction using node.next
 ```
 
-- ```python
+```python
 def print_backward(self):
     # Print linked list in reverse direction using node.prev
 ```
